@@ -6,6 +6,41 @@ body{
     
 }
 
+#head{
+    width: 610px;
+    height: 80px;
+    background-color: white;
+    margin-left: 200px;
+}
+
+#head h2{
+    text-align: center;
+   
+}
+
+#img{
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+#img img{
+    width: 350px;
+    height: 300px;
+}
+
+
+#bonus{
+    width: 180px;
+    background-color: white;
+    height: 400px;
+    border-radius: 15px;
+    margin-left: 630px;
+    margin-top: -250px;
+}
+
+
+
+
 #store
 {
     border: solid;
@@ -13,6 +48,40 @@ body{
     background-color: black;
     height: 620px;
     width: 430px;
-    margin-left: 811px;
-    margin-top: -10px;
+    margin-left: 826px;
+    margin-top: -600px;
+}
+
+#title {
+    background-color: white;
+    width: 250px;
+    height: 80px;
+    text-align: center;
+    margin-left: 90px;
+    margin-top: 40px;
+    border-radius: 10px;
+
+}
+
+#image{
+
+    width: 50%;
+}
+
+#images{
+
+    width: 50%;
+}
+
+#imag{
+
+    width: 50%;
+}
+
+#btn{
+ display: flex;
+ justify-content: space-around;
+ flex-direction: column;
+ margin-left: 155px;
+ margin-top: 20px;
 }
