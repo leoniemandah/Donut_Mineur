@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@openzeppelin/contracts": "^4.4.2",
-    "parcel": "^2.2.1"
+    "parcel": "^2.2.1",
+    "web3": "^1.7.0"
   },
   "name": "donut_mineur",
   "description": "",
