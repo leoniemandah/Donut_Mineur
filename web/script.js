@@ -1,4 +1,4 @@
-var nbCoockies;
+var nbDonuts;
 var btnBonus1;
 var btnBonus2;
 var btnBonus3;
@@ -7,24 +7,27 @@ var listeBonus;
 
 
 function initGame(){
-    nbCoockies=0;
+    nbDonuts = 0;
     btnBonus1 = document.getElementById('Buy1');
     btnBonus2 = document.getElementById('Buy2');
     btnBonus3 = document.getElementById('Buy3');
     compteurDnt = document.getElementById('profit');
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    compteurDnt.innerText = nbDonuts + ' DNT';
+    unlockBonus1();
+    unlockBonus2();
+    unlockBonus3();
 }
 
 function clickDonut(){
-    nbCoockies= nbCoockies + 1;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts + 1;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     unlockBonus1();
     unlockBonus2();
     unlockBonus3();
 }
 
 function lockBonus1(){
-    if (nbCoockies <= 15){
+    if (nbDonuts <= 15){
         btnBonus1.src="../assets/cadenas-ferme.png";
         btnBonus1.removeAttribute("onclick"); 
         btnBonus1.disabled = true;
@@ -32,7 +35,7 @@ function lockBonus1(){
 }
 
 function unlockBonus1(){
-    if (nbCoockies >= 15){
+    if (nbDonuts >= 15){
         btnBonus1.src="../assets/flat-g143731738_1280.png";
         btnBonus1.setAttribute("onclick","buyBonus1()");     
         btnBonus1.disabled = false;
@@ -40,7 +43,7 @@ function unlockBonus1(){
 }
 
 function lockBonus2(){
-    if (nbCoockies <= 150){
+    if (nbDonuts <= 150){
         btnBonus2.src="../assets/cadenas-ferme.png";
         btnBonus2.removeAttribute("onclick"); 
         btnBonus2.disabled = true;
@@ -48,7 +51,7 @@ function lockBonus2(){
 }
 
 function unlockBonus2(){
-    if (nbCoockies >= 150){
+    if (nbDonuts >= 150){
         btnBonus2.src="../assets/homer.png";
         btnBonus2.setAttribute("onclick","buyBonus2()");            
         btnBonus2.disabled = false;
@@ -56,7 +59,7 @@ function unlockBonus2(){
 }
 
 function lockBonus3(){
-    if (nbCoockies <= 1000){
+    if (nbDonuts <= 1000){
         btnBonus3.src="../assets/cadenas-ferme.png";
         btnBonus3.removeAttribute("onclick"); 
         btnBonus3.disabled = true;
@@ -64,17 +67,17 @@ function lockBonus3(){
 }
 
 function unlockBonus3(){
-    if (nbCoockies >= 1000){
+    if (nbDonuts >= 1000){
         btnBonus3.src="../assets/industry.png"; 
-        btnBonus1.setAttribute("onclick","buyBonus3()");     
+        btnBonus3.setAttribute("onclick","buyBonus3()");     
         btnBonus3.disabled = false;
     }
 }
 
 function bonus1(){
     //click toutes les secondes +0.001
-    nbCoockies= nbCoockies + 1;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts + 1;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     unlockBonus1();
     unlockBonus2();
     unlockBonus3();
@@ -83,8 +86,8 @@ function bonus1(){
 
 function bonus2(){
     //click toutes les secondes +0.01
-    nbCoockies= nbCoockies + 10;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts + 10;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     unlockBonus1();
     unlockBonus2();
     unlockBonus3();
@@ -93,8 +96,8 @@ function bonus2(){
 
 function bonus3(){
     //click toutes les secondes +0.1
-    nbCoockies= nbCoockies + 100;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts + 100;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     unlockBonus1();
     unlockBonus2();
     unlockBonus3();
@@ -104,8 +107,8 @@ function bonus3(){
 function buyBonus1(){
     //listeBonus.push('bonus1');
     bonus1();
-    nbCoockies= nbCoockies - 15;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts - 15;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     lockBonus1();
     lockBonus2();
     lockBonus3();
@@ -114,8 +117,8 @@ function buyBonus1(){
 function buyBonus2(){
     //listeBonus.push('bonus2');
     bonus2();
-    nbCoockies= nbCoockies - 150;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts - 150;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     lockBonus1();
     lockBonus2();
     lockBonus3();
@@ -123,9 +126,10 @@ function buyBonus2(){
 
 function buyBonus3(){
     //listeBonus.push('bonus3');
+    alert("here")
     bonus3();
-    nbCoockies= nbCoockies - 1000;
-    compteurDnt.innerText = nbCoockies + ' DNT';
+    nbDonuts= nbDonuts - 1000;
+    compteurDnt.innerText = nbDonuts + ' DNT';
     lockBonus1();
     lockBonus2();
     lockBonus3();
