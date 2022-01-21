@@ -43,7 +43,7 @@ function clickDonut() {
 
 function lockBonus1() {
     if (nbDonuts <= 15) {
-        btnBonus1.src = "../assets/cadenas-ferme.png";
+        btnBonus1.src = "https://cdn.discordapp.com/attachments/934045667117105192/934093409654825030/cadenas-ferme.png";
         btnBonus1.removeAttribute("onclick");
         btnBonus1.disabled = true;
     }
@@ -51,7 +51,7 @@ function lockBonus1() {
 
 function unlockBonus1() {
     if (nbDonuts >= 15) {
-        btnBonus1.src = "../assets/flat-g143731738_1280.png";
+        btnBonus1.src = "https://media.discordapp.net/attachments/934045667117105192/934093410338492476/flat-g143731738_1280.png";
         btnBonus1.setAttribute("onclick", "buyBonus1()");
         btnBonus1.disabled = false;
     }
@@ -59,7 +59,7 @@ function unlockBonus1() {
 
 function lockBonus2() {
     if (nbDonuts <= 150) {
-        btnBonus2.src = "../assets/cadenas-ferme.png";
+        btnBonus2.src = "https://cdn.discordapp.com/attachments/934045667117105192/934093409654825030/cadenas-ferme.png";
         btnBonus2.removeAttribute("onclick");
         btnBonus2.disabled = true;
     }
@@ -67,7 +67,7 @@ function lockBonus2() {
 
 function unlockBonus2() {
     if (nbDonuts >= 150) {
-        btnBonus2.src = "../assets/homer.png";
+        btnBonus2.src = "https://cdn.discordapp.com/attachments/934045667117105192/934093410581745734/homer.png";
         btnBonus2.setAttribute("onclick", "buyBonus2()");
         btnBonus2.disabled = false;
     }
@@ -75,7 +75,7 @@ function unlockBonus2() {
 
 function lockBonus3() {
     if (nbDonuts <= 1000) {
-        btnBonus3.src = "../assets/cadenas-ferme.png";
+        btnBonus3.src = "https://cdn.discordapp.com/attachments/934045667117105192/934093409654825030/cadenas-ferme.png";
         btnBonus3.removeAttribute("onclick");
         btnBonus3.disabled = true;
     }
@@ -83,7 +83,7 @@ function lockBonus3() {
 
 function unlockBonus3() {
     if (nbDonuts >= 1000) {
-        btnBonus3.src = "../assets/industry.png";
+        btnBonus3.src = "https://cdn.discordapp.com/attachments/934045667117105192/934093408832733304/industry.png";
         btnBonus3.setAttribute("onclick", "buyBonus3()");
         btnBonus3.disabled = false;
     }
