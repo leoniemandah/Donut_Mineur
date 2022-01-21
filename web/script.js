@@ -13,6 +13,11 @@ function initGame(){
     btnBonus3 = document.getElementById('Buy3');
     compteurDnt = document.getElementById('profit');
     compteurDnt.innerText = nbCoockies + ' DNT';
+    console.log(window.ethereum)
+    // Connexion Via Web3 par MetaMask
+if (typeof window.ethereum !== 'undefined') {
+    console.log('MetaMask is installed!');
+  }
 }
 
 function clickDonut(){
@@ -130,3 +135,5 @@ function buyBonus3(){
     lockBonus2();
     lockBonus3();
 }
+
+ 
