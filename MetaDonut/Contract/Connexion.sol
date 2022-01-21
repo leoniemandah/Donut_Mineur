@@ -9,3 +9,6 @@ contract MyToken is ERC20 {
     }
 }
 
+contract DonutMiner {
+    
+}
