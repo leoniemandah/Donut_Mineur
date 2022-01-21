@@ -1,11 +1,4 @@
-var nbDonuts;
-var btnBonus1;
-var btnBonus2;
-var btnBonus3;
-var compteurDnt;
-var BonusInfo1;
-var BonusInfo2;
-var BonusInfo3;
+var nbDonuts, btnBonus1, btnBonus2, btnBonus3, compteurDnt, BonusInfo, BonusInfo, BonusInfo3;
 var addDonut1 = 0;
 var addDonut2 = 0;
 var addDonut3 = 0;
@@ -30,17 +23,17 @@ function initGame() {
 
 
     initCookiesValues();
-    // nbDonuts = 0;
     compteurDnt.innerText = nbDonuts + ' Donuts';
     profitDNT.innerText = nbDonuts / 1000 + ' DNT';
 
     unlockBonus1();
     unlockBonus2();
     unlockBonus3();
+
 }
 
 function clickDonut() {
-    nbDonuts = nbDonuts + 1000;
+    nbDonuts = nbDonuts + 1;
     compteurDnt.innerText = nbDonuts + ' Donuts';
     profitDNT.innerText = nbDonuts / 1000 + ' DNT';
     unlockBonus1();
@@ -130,7 +123,6 @@ function bonus3() {
 }
 
 function buyBonus1() {
-    //listeBonus.push('bonus1');
     if (addDonut1 == 0) {
         addDonut1 = 1
         BonusInfo1.innerText = `Permets de générer ${addDonut1} Donuts toutes les 5 secondes`
@@ -152,14 +144,13 @@ function buyBonus1() {
 }
 
 function buyBonus2() {
-    //listeBonus.push('bonus2');
     if (addDonut2 == 0) {
         addDonut2 = 50
-        BonusInfo2.innerText = `Permets de générer ${addDonut2} Donuts toutes les 5 secondes`
+        BonusInfo2.innerText = `Permets de générer ${addDonut2} Donuts toutes les 10 secondes`
         bonus2()
     } else {
         addDonut2 += 50
-        BonusInfo2.innerText = `Permets de générer ${addDonut2} Donuts toutes les 5 secondes`
+        BonusInfo2.innerText = `Permets de générer ${addDonut2} Donuts toutes les 10 secondes`
     }
 
     listeBonus[EnumBonus.Bonus2] = addDonut2
@@ -203,6 +194,7 @@ function setCookie(cname, cvalue, exdays) {
 function getCookie(cname) {
 
     var cookieArr = document.cookie.split(";");
+    // alert(cookieArr)
 
     for (var i = 0; i < cookieArr.length; i++) {
         var cookiePair = cookieArr[i].split("=");
@@ -215,25 +207,19 @@ function getCookie(cname) {
     return null;
 }
 
-function checkCookie() {
-    let user = getCookie("username");
-    if (user != "") {
-        alert("Ready to mine " + user + " ?");
-    } else {
-        user = prompt("Please enter your name:", "");
-        if (user != "" && user != null) {
-            setCookie("username", user, 365);
-        }
-    }
-}
-
 function initCookiesValues() {
     CookieBonus = getCookie("listeBonus");
     if (!CookieBonus) return null;
-    addDonut1 = Number(CookieBonus.split(',')[EnumBonus.Bonus1]);
+
     bonus1();
-    addDonut2 = Number(CookieBonus.split(',')[EnumBonus.Bonus2]);
+    addDonut1 = Number(CookieBonus.split(',')[EnumBonus.Bonus1]);
+    BonusInfo1.innerText = `Permets de générer ${addDonut1} Donuts toutes les 5 secondes`
+
     bonus2();
-    addDonut3 = Number(CookieBonus.split(',')[EnumBonus.Bonus3]);
+    addDonut2 = Number(CookieBonus.split(',')[EnumBonus.Bonus2]);
+    BonusInfo2.innerText = `Permets de générer ${addDonut2} Donuts toutes les 10 secondes`
+
     bonus3();
+    addDonut3 = Number(CookieBonus.split(',')[EnumBonus.Bonus3]);
+    BonusInfo3.innerText = `Permets de générer ${addDonut3} Donuts toutes les 15 secondes`
 }
