@@ -13,6 +13,9 @@ function initGame(){
     btnBonus3 = document.getElementById('Buy3');
     compteurDnt = document.getElementById('profit');
     compteurDnt.innerText = nbCoockies + ' DNT';
+    unlockBonus1();
+    unlockBonus2();
+    unlockBonus3();
     console.log(window.ethereum)
     // Connexion Via Web3 par MetaMask
 if (typeof window.ethereum !== 'undefined') {
@@ -71,7 +74,7 @@ function lockBonus3(){
 function unlockBonus3(){
     if (nbCoockies >= 1000){
         btnBonus3.src="../assets/industry.png"; 
-        btnBonus1.setAttribute("onclick","buyBonus3()");     
+        btnBonus3.setAttribute("onclick","buyBonus3()");     
         btnBonus3.disabled = false;
     }
 }
