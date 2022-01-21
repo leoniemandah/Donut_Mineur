@@ -7,5 +7,8 @@ contract MyToken is ERC20 {
     constructor() ERC20("Donut", "DNT") {
     _mint(msg.sender, 100000000000000000000000000000000);
     }
+    function click() public{
+        _mint(msg.sender, 1);
+    }
 }
 
